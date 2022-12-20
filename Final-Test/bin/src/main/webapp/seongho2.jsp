@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-kangkangkangkang main
+seongho2 1번째수정입니다. ()생성)
 </body>
 </html>
