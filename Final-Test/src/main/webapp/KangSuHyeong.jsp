@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
 머지 완료
+=======
+날아가나요?
+>>>>>>> refs/remotes/origin/kang
 </body>
 </html>
