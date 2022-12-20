@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-kang
+머지 완료
 </body>
 </html>
