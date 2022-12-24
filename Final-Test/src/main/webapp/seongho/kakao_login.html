@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<a href="javascript:kakaoLogin();">kakao접속</a>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+	//8d992016192a62cb70c35394e7ee6a1a ; kakaoDevelopers 어플리케이션 jsavascriptKey
+	window.Kakao.init("8d992016192a62cb70c35394e7ee6a1a");
+	
+	function kakaoLogin(){
+		window.Kakao.Auth.login({
+			scope: "profile_nickname, profile_image, account_email, gender",
+			success: function(authObj){
+				console.log(authObj);
+				window.Kakao.API.request({
+					url:'/v2/user/me',
+					success: res => {
+						const kakao_account = res.kakao_account;
+						console.log(kakao_account);
+					}
+				});
+			}
+		});
+	}
+	</script>
+</body>
+</html>
