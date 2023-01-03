@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<a href='javascript:kakaoLogin()'>카카오 로그인 API</a>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<script>
+// 3b4e23e9eb8610a0e2a9429aa2dc88a2
+window.Kakao.init("3b4e23e9eb8610a0e2a9429aa2dc88a2");
+
+function kakaoLogin(){
+	   window.Kakao.Auth.login({
+	      scope:'profile_nickname, account_email, gender',
+	      success: function(authObj){
+	         console.log(authObj);
+	         window.Kakao.API.request({
+	            url:'/v2/user/me',
+	            success: res => {
+	               const kakao_account = res.kakao_account;
+	               console.log(kakao_account);
+	            }
+	         })
+	      }
+	   })
+	}
+
+</script>
+</body>
+</html>
